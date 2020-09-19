@@ -1,5 +1,6 @@
 package org.example;
 
+import org.assertj.core.api.AssertionsForClassTypes;
 import org.assertj.core.api.Java6Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,6 +45,21 @@ public class MyStackTest {
 
         //Assert
         assertThat(throwable).isInstanceOf(IllegalArgumentException.class).hasMessage("Element must not be null!");
+    }
+
+    @Test
+    public void pop_ShouldStackCountDecrease1AndReturnTopElement() {
+
+        //Arrange
+        String element = "Deneme";
+
+        //Act
+        sut.push(element);
+        String result = sut.pop();
+
+        //Assert
+        assertThat(result).isEqualTo(element);
+        assertEquals(0, sut.count());
     }
 
 
