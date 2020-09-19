@@ -1,13 +1,17 @@
 package org.example;
 
-public class MyStack {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MyStack<T> {
 
-    public void push(String element) {
+    List<T> myStack = new ArrayList<>();
 
+    public void push(T element) {
+        myStack.add(element);
     }
 
     public int count() {
-        return -1;
+        return myStack.size();
     }
 }

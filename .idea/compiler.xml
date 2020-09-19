@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TrendyolBootcampWeek3TDDCaseStudy" />
+        <module name="TrendyolBootcampW3TDDStudyCase" />
       </profile>
     </annotationProcessing>
   </component>
