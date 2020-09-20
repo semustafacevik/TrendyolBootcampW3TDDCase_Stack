@@ -8,7 +8,7 @@ public class MyStack<T> {
     List<T> myStack = new ArrayList<>();
 
     public void push(T element) {
-        if(element == null){
+        if (element == null) {
             throw new IllegalArgumentException("Element must not be null!");
         }
 
@@ -20,6 +20,6 @@ public class MyStack<T> {
     }
 
     public T pop() {
-        return null;
+        return myStack.remove(myStack.size() - 1);
     }
 }

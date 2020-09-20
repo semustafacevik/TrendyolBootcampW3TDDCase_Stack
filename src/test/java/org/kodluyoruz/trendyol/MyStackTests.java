@@ -4,7 +4,6 @@ import org.assertj.core.api.Java6Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.kodluyoruz.trendyol.MyStack;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -60,6 +59,18 @@ public class MyStackTests {
         //Assert
         assertThat(result).isEqualTo(element);
         assertEquals(0, sut.count());
+    }
+
+    @Test
+    public void pop_WhenStackIsEmpty_ShouldThrowIllegalStateException() {
+
+        //Arrange
+
+        //Act
+        Throwable throwable = Java6Assertions.catchThrowable(() -> sut.pop());
+
+        //Assert
+        assertThat(throwable).isInstanceOf(IllegalStateException.class).hasMessage("Stack is empty.");
     }
 
 
