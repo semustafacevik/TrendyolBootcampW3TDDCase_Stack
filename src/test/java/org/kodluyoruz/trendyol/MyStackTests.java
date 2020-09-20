@@ -74,6 +74,25 @@ public class MyStackTests {
     }
 
     @Test
+    public void pop_WhenStackPushCalled3Times_PeekMethodsCalled1Times_PopMethodsCalled1Times_ShouldReturnTopElement() {
+
+        //Arrange
+        String element = "Deneme";
+        String element2 = "Deneme2";
+        String element3 = "Deneme3";
+
+        //Act
+        sut.push(element);
+        sut.push(element2);
+        sut.push(element3);
+        sut.peek();
+        String result = sut.pop();
+
+        //Assert
+        assertThat(result).isEqualTo(element3);
+    }
+
+    @Test
     public void peek_ShouldStackCountDoesNotDecrease1AndReturnTopElement() {
 
         //Arrange
@@ -98,6 +117,25 @@ public class MyStackTests {
 
         //Assert
         assertThat(throwable).isInstanceOf(IllegalStateException.class).hasMessage("Stack is empty.");
+    }
+
+    @Test
+    public void peek_WhenStackPushCalled3Times_PopMethodsCalled1Times_PeekMethodsCalled1Times_ShouldReturnSecondElement() {
+
+        //Arrange
+        String element = "Deneme";
+        String element2 = "Deneme2";
+        String element3 = "Deneme3";
+
+        //Act
+        sut.push(element);
+        sut.push(element2);
+        sut.push(element3);
+        sut.pop();
+        String result = sut.peek();
+
+        //Assert
+        assertThat(result).isEqualTo(element2);
     }
 
 
