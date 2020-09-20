@@ -125,12 +125,46 @@ public class MyStackTests {
 
         //Act
         sut.push(element);
-        sut.push(element);
+        sut.push(element2);
         sut.pop();
         sut.pop();
 
         //Assert
         assertEquals(0, sut.count());
+    }
+
+    @Test
+    public void count_WhenStackPushAndPeekMethodsCalled2Times_ShouldReturn2() {
+
+        //Arrange
+        String element = "Deneme";
+        String element2 = "Deneme2";
+
+        //Act
+        sut.push(element);
+        sut.push(element2);
+        sut.peek();
+        sut.peek();
+
+        //Assert
+        assertEquals(2, sut.count());
+    }
+
+    @Test
+    public void count_WhenStackPushCalled2Times_PopAndPeekMethodsCalled1Times_ShouldReturn1() {
+
+        //Arrange
+        String element = "Deneme";
+        String element2 = "Deneme2";
+
+        //Act
+        sut.push(element);
+        sut.push(element2);
+        sut.pop();
+        sut.peek();
+
+        //Assert
+        assertEquals(1, sut.count());
     }
 
 
