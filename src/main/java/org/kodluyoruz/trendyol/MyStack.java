@@ -29,6 +29,6 @@ public class MyStack<T> {
     }
 
     public T peek() {
-        return null;
+        return myStack.get(myStack.size() - 1);
     }
 }

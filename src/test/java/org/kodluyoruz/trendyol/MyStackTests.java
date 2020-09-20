@@ -88,6 +88,18 @@ public class MyStackTests {
         assertEquals(1, sut.count());
     }
 
+    @Test
+    public void peek_WhenStackIsEmpty_ShouldThrowIllegalStateException() {
+
+        //Arrange
+
+        //Act
+        Throwable throwable = Java6Assertions.catchThrowable(() -> sut.peek());
+
+        //Assert
+        assertThat(throwable).isInstanceOf(IllegalStateException.class).hasMessage("Stack is empty.");
+    }
+
 
 
 
