@@ -29,6 +29,11 @@ public class MyStack<T> {
     }
 
     public T peek() {
+
+        if (myStack.size() == 0) {
+            throw new IllegalStateException("Stack is empty.");
+        }
+
         return myStack.get(myStack.size() - 1);
     }
 }

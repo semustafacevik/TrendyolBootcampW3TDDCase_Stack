@@ -101,6 +101,38 @@ public class MyStackTests {
     }
 
 
+    @Test
+    public void count_WhenStackPushMethodCalled2Times_ShouldReturn2() {
+
+        //Arrange
+        String element = "Deneme";
+        String element2 = "Deneme2";
+
+        //Act
+        sut.push(element);
+        sut.push(element2);
+
+        //Assert
+        assertEquals(2, sut.count());
+    }
+
+    @Test
+    public void count_WhenStackPushAndPopMethodsCalled2Times_ShouldReturn0() {
+
+        //Arrange
+        String element = "Deneme";
+        String element2 = "Deneme2";
+
+        //Act
+        sut.push(element);
+        sut.push(element);
+        sut.pop();
+        sut.pop();
+
+        //Assert
+        assertEquals(0, sut.count());
+    }
+
 
 
     /*
