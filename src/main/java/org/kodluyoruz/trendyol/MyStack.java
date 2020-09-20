@@ -20,6 +20,15 @@ public class MyStack<T> {
     }
 
     public T pop() {
+
+        if (myStack.size() == 0) {
+            throw new IllegalStateException("Stack is empty.");
+        }
+
         return myStack.remove(myStack.size() - 1);
+    }
+
+    public T peek() {
+        return null;
     }
 }

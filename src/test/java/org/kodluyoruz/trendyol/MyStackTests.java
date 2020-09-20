@@ -73,6 +73,21 @@ public class MyStackTests {
         assertThat(throwable).isInstanceOf(IllegalStateException.class).hasMessage("Stack is empty.");
     }
 
+    @Test
+    public void peek_ShouldStackCountDoesNotDecrease1AndReturnTopElement() {
+
+        //Arrange
+        String element = "Deneme";
+
+        //Act
+        sut.push(element);
+        String result = sut.peek();
+
+        //Assert
+        assertThat(result).isEqualTo(element);
+        assertEquals(1, sut.count());
+    }
+
 
 
 
